@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: boot-jdbc
+custom:
+  mysql:
+    url: jdbc:mysql://localhost:3306/developer_database
+    userName: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+ # h2:
+  #  database:
+   #   enabled: true
+   # console:
+    #  path: /h2-console
+
+ # datasource:
+  #  url: ${SPRING_DATASOURCE_URL}
+  #  username: ${SPRING_DATASOURCE_USERNAME}
+  #  password: ${SPRING_DATASOURCE_PASSWORD}
+
+

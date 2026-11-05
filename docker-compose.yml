@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: boot-jdbc
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/developer_database
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
