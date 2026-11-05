@@ -1,5 +1,0 @@
-#spring:
- # datasource:
-  #  url: jdbc:mysql://mysql-db:3306/developer_database
-   # username: root
-   # password: secret
