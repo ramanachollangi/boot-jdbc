@@ -12,7 +12,7 @@ public class BootJdbcApplication {
     public static void main(String[] args) {
         ApplicationContext ctx= SpringApplication.run(BootJdbcApplication.class, args);
         StoreService serviceBo= ctx.getBean(StoreService.class);
-        System.out.println(serviceBo.createStore(new StoreBo(0,"Hyd","India","Aratlakatta","9666963276","AP","Louki","533016")));
+        System.out.println(serviceBo.createStore(new StoreBo(0,"Kakinada","India","Aratlakatta","9666963276","AP","VegStore","533016")));
     }
 
 }
