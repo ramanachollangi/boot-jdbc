@@ -8,7 +8,7 @@ custom:
     url: ${SPRING_DATASOURCE_URL}
     userName:  ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName: ${SPRING_DATASOURCE_DRIVER}
  # h2:
   #  database:
    #   enabled: true
