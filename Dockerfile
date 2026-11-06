@@ -12,7 +12,7 @@ COPY src src
 
 EXPOSE 8090
 # Build the executable jar file
-RUN chmod +x gradlew && ./gradlew clean bootJar --no-daemon
+RUN chmod +x gradlew && ./gradlew clean bootWar --no-daemon
 
 # Stage 2: Create the final lightweight runtime image
 FROM eclipse-temurin:17-jre-alpine
