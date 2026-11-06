@@ -25,7 +25,7 @@ custom:
     url: jdbc:mysql://localhost:3306/developer_database?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
 
 ---
 # ==========================================
@@ -40,4 +40,4 @@ custom:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
-    driver-class-name: ${SPRING_DATASOURCE_DRIVER}
+    driverClassName: ${SPRING_DATASOURCE_DRIVER}
