@@ -27,13 +27,12 @@ spec:
               value: "root"
             - name: SPRING_DATASOURCE_PASSWORD
               value: "your_secure_password"
-            - name:  SPRING_DATASOURCE_DRIVER
+            - name: SPRING_DATASOURCE_DRIVER
               value: "com.mysql.cj.jdbc.Driver"
         # 2. Cloud SQL Auth Proxy Sidecar Container
         - name: cloud-sql-proxy
           image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.8.0
           args:
-            - "--private-ip"
             - "project-c511d3e5-da4d-466b-831:us-central1:my-mysql-instance"
           securityContext:
             runAsNonRoot: true
