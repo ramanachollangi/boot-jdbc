@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: boot-jdbc
+  jpa:
+    hibernate:
+      ddl-auto=update: update
 custom:
   mysql:
     url: ${SPRING_DATASOURCE_URL}
