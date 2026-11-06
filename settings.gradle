@@ -1,1 +1,4 @@
-rootProject.name = 'boot-jdbc'
+rootProject.name = 'my-gke-app'
+include 'boot-jdbc'
+include 'boot-mysql-connection-starter'
+
