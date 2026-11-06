@@ -10,19 +10,20 @@ COPY build.gradle .
 COPY settings.gradle .
 COPY src src
 
+EXPOSE 8090
 # Build the executable jar file
-RUN chmod +x gradlew && ./gradlew bootJar --no-daemon
+RUN chmod +x gradlew && ./gradlew clean bootJar --no-daemon
 
 # Stage 2: Create the final lightweight runtime image
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
-EXPOSE 8090
+
 # Copy the built jar from the build stage
-COPY --from=build /app/build/libs/boot-store-jdbc-0.0.1-SNAPSHOT.jar boot-store-jdbc.jar
+COPY --from=build /app/build/libs/boot-store-jdbc-0.0.1-SNAPSHOT.war boot-store-jdbc.war
 
 #Automatically copy your built jar into the image during the build process
 #COPY build/libs/boot-jdbc-0.0.1-SNAPSHOT.jar boot-jdbc.jar
 
 # Tell the container what command to run when it starts
-ENTRYPOINT ["java", "-jar", "boot-store-jdbc.jar"]
+ENTRYPOINT ["java", "-jar", "boot-store-jdbc.war"]
