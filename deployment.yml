@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boot-jdbc-deployment
+  labels:
+    app: boot-jdbc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boot-jdbc
+  template:
+    metadata:
+      labels:
+        app: boot-jdbc
+    spec:
+      containers:
+        # 1. Your Spring Boot App Container
+        - name: boot-jdbc
+          image: us-central1-docker.pkg.dev/project-c511d3e5-da4d-466b-831/my-gke-repo/boot-jdbc:v1
+          ports:
+            - containerPort: 8081
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:mysql://127.0.0.1:3306/developer_database?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "root"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "your_secure_password"
+        # 2. Cloud SQL Auth Proxy Sidecar Container
+        - name: cloud-sql-proxy
+          image: gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.8.0
+          args:
+            - "--private-ip"
+            - "project-c511d3e5-da4d-466b-831:us-central1:my-mysql-instance"
+          securityContext:
+            runAsNonRoot: true
+          resources:
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: boot-jdbc-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: boot-jdbc
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8081
