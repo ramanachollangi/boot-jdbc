@@ -78,7 +78,7 @@
             <tbody>
                 <c:forEach var="store" items="${stores}">
                     <tr>
-                        <td><span class="badge">#${store.storeId}</span></td>
+
                         <td><strong>${store.storeName}</strong></td>
                         <td>${store.location}</td>
                         <td>${store.city}</td>

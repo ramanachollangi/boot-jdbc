@@ -21,6 +21,9 @@ spec:
           ports:
             - containerPort: 8090
           env:
+            # Activate the Kubernetes profile
+            - name: SPRING_PROFILES_ACTIVE
+              value: "k8s"
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:mysql://mysql-service:3306/developer_database?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
             - name: SPRING_DATASOURCE_USERNAME
