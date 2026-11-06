@@ -21,7 +21,7 @@ WORKDIR /app
 # Copy the built jar from the build stage
 COPY --from=build /app/build/libs/*.jar boot-jdbc.jar
 
-# Automatically copy your built jar into the image during the build process
+#Automatically copy your built jar into the image during the build process
 #COPY build/libs/boot-jdbc-0.0.1-SNAPSHOT.jar boot-jdbc.jar
 
 # Tell the container what command to run when it starts
