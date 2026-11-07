@@ -19,8 +19,8 @@ public class StoreController {
 
     @GetMapping("/stores")
     public String viewStores(Model model) {
-        List<Store> stores = storeService.getAllStores(); // Ensure this method exists in your service/dao
+        List<Store> stores = storeService.getAllStores();
         model.addAttribute("stores", stores);
-        return "store-list"; // Resolves to /WEB-INF/jsp/store-list.jsp
+        return "store-list";
     }
 }
