@@ -21,10 +21,10 @@ WORKDIR /app
 # Copy the built jar from the build stage
 #COPY --from=build /app/build/libs/boot-store-jdbc-0.0.1-SNAPSHOT.jar boot-store-jdbc.jar
 # Copy any generated jar from the build stage matching the snapshot pattern
-COPY --from=build /app/build/libs/boot-store-jdbc-0.0.1-SNAPSHOT.war boot-store-jdbc.war
+COPY --from=build /app/build/libs/store-service-0.0.1-SNAPSHOT.war store-service.war
 
 #Automatically copy your built jar into the image during the build process
 #COPY build/libs/boot-jdbc-0.0.1-SNAPSHOT.jar boot-jdbc.jar
 
 # Tell the container what command to run when it starts
-ENTRYPOINT ["java", "-jar", "boot-store-jdbc.war"]
+ENTRYPOINT ["java", "-jar", "store-service.war"]
