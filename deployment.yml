@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: boot-store-jdbc-deployment
+  name: store-service
   labels:
     app: store-service
 spec:
