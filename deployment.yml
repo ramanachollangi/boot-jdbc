@@ -17,7 +17,7 @@ spec:
       containers:
         # 1. Your Spring Boot App Container
         - name: boot-jdbc
-          image: us-central1-docker.pkg.dev/project-c511d3e5-da4d-466b-831/my-gke-repo/boot-store-jdbc:v1
+          image: us-central1-docker.pkg.dev/project-c511d3e5-da4d-466b-831/my-gke-repo/boot-store-jdbc:latest
           ports:
             - containerPort: 8090
           env:
