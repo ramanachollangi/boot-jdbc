@@ -6,11 +6,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@ConfigurationProperties(prefix = "custom.mysql")
+@ConfigurationProperties(prefix = "datasource.mysql")
 public class MySqlProperties {
     private String url;
     private String userName;
     private String password;
-    private String driverClassName ="com.mysql.cj.jdbc.Driver";
+    private String driverClassName;
 
 }
