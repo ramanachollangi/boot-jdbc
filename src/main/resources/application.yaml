@@ -20,7 +20,7 @@ spring:
   config:
     activate:
       on-profile: local
-custom:
+datasource:
   mysql:
     url: jdbc:mysql://localhost:3306/developer_database?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
@@ -35,7 +35,7 @@ spring:
   config:
     activate:
       on-profile: k8s
-custom:
+datasource:
   mysql:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
