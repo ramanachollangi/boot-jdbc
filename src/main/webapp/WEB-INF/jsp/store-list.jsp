@@ -65,27 +65,25 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Store Name</th>
                     <th>Location</th>
                     <th>City</th>
                     <th>State</th>
                     <th>Country</th>
-                    <th>Phone</th>
                     <th>Zip</th>
+                    <th>Contact</th>
                 </tr>
             </thead>
             <tbody>
                 <c:forEach var="store" items="${stores}">
                     <tr>
-
                         <td><strong>${store.storeName}</strong></td>
                         <td>${store.location}</td>
                         <td>${store.city}</td>
                         <td>${store.state}</td>
                         <td>${store.country}</td>
-                        <td>${store.phone}</td>
                         <td>${store.zip}</td>
+                        <td>${store.phone}</td>
                     </tr>
                 </c:forEach>
             </tbody>

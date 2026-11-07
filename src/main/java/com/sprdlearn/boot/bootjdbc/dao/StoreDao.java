@@ -16,7 +16,6 @@ public class StoreDao {
 
     private static final String GET_STORE="SELECT city, country, location, phone, state, store_name AS storeName, zip FROM store";
     private static final String STORE_INSERT="insert into store (city,country,location,phone,state,store_name,zip) VALUES (:city, :country, :location, :phone, :state, :storeName, :zip)";
-    private final EntityManagerFactory entityManager;
     private final JdbcClient jdbcClient;
 
     public int newStore(StoreBo storeBo) {

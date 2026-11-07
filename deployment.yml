@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: boot-store-jdbc-deployment
   labels:
-    app: boot-store-jdbc
+    app: store-service
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: boot-store-jdbc
+      app: store-service
   template:
     metadata:
       labels:
-        app: boot-store-jdbc
+        app: store-service
     spec:
       containers:
         # 1. Your Spring Boot App Container
-        - name: boot-jdbc
+        - name: store-service
           image: us-central1-docker.pkg.dev/project-c511d3e5-da4d-466b-831/my-gke-repo/boot-store-jdbc:latest
           ports:
             - containerPort: 8090
@@ -39,10 +39,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: boot-store-jdbc-service
+  name: store-service-service
 spec:
   selector:
-    app: boot-store-jdbc
+    app: store-service
   ports:
     - name: http
       port: 8090

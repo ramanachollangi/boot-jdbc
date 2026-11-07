@@ -3,9 +3,6 @@ package com.sprdlearn.boot.bootjdbc.config;
 import com.sprdlearn.boot.bootjdbc.util.MySqlProperties;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,11 +19,11 @@ import java.util.Map;
 
 @Configuration
 @EnableConfigurationProperties(MySqlProperties.class)
-public class MySqlAutoConfigurationSame {
+public class PersistenceConfig {
 
     private final MySqlProperties properties;
 
-    public MySqlAutoConfigurationSame(@Qualifier("mySqlProperties") MySqlProperties properties) {
+    public PersistenceConfig(@Qualifier("mySqlProperties") MySqlProperties properties) {
         this.properties = properties;
     }
 

@@ -12,7 +12,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class StoreService {
 
-
     private final StoreDao storeDao;
 
     public int createStore(StoreBo storeBo){
