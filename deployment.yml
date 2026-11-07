@@ -44,7 +44,7 @@ spec:
   selector:
     app: boot-store-jdbc
   ports:
-    - protocol: TCP
-      port: 80
+    - name: http
+      port: 8090
       targetPort: 8090
-  type: ClusterIP
+  type: LoadBalancer
